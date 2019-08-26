@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a0562c3-de84-4574-bae0-1d8d82bf9398" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineModel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EngineModel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainGame">
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HelloWorld" />
       <module name="EngineModel" />
@@ -54,8 +54,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="engineTester.MainGame" />
+      <module name="EngineModel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="engineTester.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainGame" />
         <item itemvalue="Application.HelloWorld" />
       </list>
     </recent_temporary>
@@ -70,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566818720717</updated>
-      <workItem from="1566818727651" duration="848000" />
+      <workItem from="1566818727651" duration="5945000" />
     </task>
     <servers />
   </component>
