@@ -8,6 +8,7 @@ import renderEngine.Loader;
 import renderEngine.RawModel;
 import renderEngine.Renderer;
 import renderEngine.WindowManager;
+import shaders.StaticShader;
 
 public class MainGame {
     public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class MainGame {
 
         Loader loader = new Loader();
         Renderer renderer = new Renderer();
+        StaticShader shader = new StaticShader();
 
         float[] vertices = {
                 -0.5f, 0.5f, 0f,
@@ -38,7 +40,9 @@ public class MainGame {
 
             //render
             renderer.prepare();
+            shader.start();
             renderer.render(model);
+            shader.stop();
 
             glfwSwapBuffers(window); // swap the color buffers
 
