@@ -22,16 +22,17 @@ public class MainGame {
                 -0.5f, 0.5f, 0f,
                 -0.5f, -0.5f, 0f,
                 0.5f, -0.5f, 0f,
-
-                0.5f, -0.5f, 0f,
-                0.5f, 0.5f, 0f,
-                -0.5f, 0.5f, 0f,
+                0.5f, 0.5f, 0
         };
 
-        RawModel model = loader.loadToVao(vertices);
+        int[] indices = {
+                0, 1, 3,
+                3, 1, 2
+        };
+
+        RawModel model = loader.loadToVao(vertices, indices);
 
         while (!glfwWindowShouldClose(window)) {
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
             //game logic
 
