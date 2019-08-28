@@ -3,7 +3,10 @@
 in vec3 position;
 in vec2 textureCords;
 
+out vec3 color;
 out vec2 pass_textureCords;
+
+uniform mat4 transformationMatrix;
 
 void main(void) {
     gl_Position = vec4(position.xyz, 1.0);
