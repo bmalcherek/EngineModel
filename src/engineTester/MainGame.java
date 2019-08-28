@@ -1,14 +1,16 @@
 package engineTester;
 
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
+
+import models.TexturedModel;
 import org.lwjgl.opengl.GL;
 
 import renderEngine.Loader;
-import renderEngine.RawModel;
+import models.RawModel;
 import renderEngine.Renderer;
 import renderEngine.WindowManager;
 import shaders.StaticShader;
+import textures.ModelTexture;
 
 public class MainGame {
     public static void main(String[] args) {
@@ -32,7 +34,16 @@ public class MainGame {
                 3, 1, 2
         };
 
-        RawModel model = loader.loadToVao(vertices, indices);
+        float[] textureCords = {
+                0, 0,
+                0, 1,
+                1, 1,
+                1, 0
+        };
+
+        RawModel model = loader.loadToVao(vertices, indices, textureCords);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("python"));
+        TexturedModel texturedModel = new TexturedModel(model, texture);
 
         while (!glfwWindowShouldClose(window)) {
 
@@ -41,7 +52,7 @@ public class MainGame {
             //render
             renderer.prepare();
             shader.start();
-            renderer.render(model);
+            renderer.render(texturedModel);
             shader.stop();
 
             glfwSwapBuffers(window); // swap the color buffers
