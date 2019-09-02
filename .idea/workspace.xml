@@ -2,199 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5a85721-b76a-4f82-a944-e75cf2929168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineModel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EngineModel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/assimp_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/bgfx_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/blendish_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/build.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/cuda_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/dyncall_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/glfw_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jemalloc_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/khronos_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libdivide_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/llvm_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lmdb_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-assimp-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-assimp-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-assimp-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-assimp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-bgfx-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-bgfx-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-bgfx-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-bgfx.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-cuda-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-cuda-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-cuda.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-egl-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-egl-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-egl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-glfw-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-glfw-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-glfw-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-glfw.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jawt-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jawt-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jawt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jemalloc-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jemalloc-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jemalloc-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-jemalloc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-libdivide-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-libdivide-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-libdivide-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-libdivide.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-llvm-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-llvm-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-llvm-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-llvm.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lmdb-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lmdb-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lmdb-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lmdb.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lz4-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lz4-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lz4-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-lz4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-meow-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-meow-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-meow-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-meow.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nanovg-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nanovg-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nanovg-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nanovg.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nfd-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nfd-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nfd-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nfd.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nuklear-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nuklear-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nuklear-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-nuklear.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-odbc-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-odbc-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-odbc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openal-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openal-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openal-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openal.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opencl-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opencl-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opencl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengl-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengl-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengl-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengles-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengles-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengles-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opengles.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openvr-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openvr-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openvr-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-openvr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opus-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opus-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opus-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-opus.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-ovr-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-ovr-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-ovr-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-ovr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-par-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-par-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-par-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-par.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-release-all-zip.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-remotery-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-remotery-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-remotery-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-remotery.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-rpmalloc-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-rpmalloc-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-rpmalloc-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-rpmalloc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-sse-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-sse-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-sse-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-sse.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-stb-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-stb-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-stb-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-stb.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyexr-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyexr-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyexr-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyexr.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyfd-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyfd-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyfd-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tinyfd.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tootle-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tootle-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tootle-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-tootle.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vma-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vma-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vma-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vma.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vulkan-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vulkan-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-vulkan.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-xxhash-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-xxhash-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-xxhash-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-xxhash.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-yoga-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-yoga-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-yoga-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-yoga.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-zstd-javadoc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-zstd-natives-windows.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-zstd-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl-zstd.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lwjgl_util-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/lz4_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/meow_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/nanosvg_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/nanovg_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/nfd_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/openal_soft_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/openvr_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/opus_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/ovr_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/remotery_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/rpmalloc_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tinyexr_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tinyfd_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tootle_directxmesh_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tootle_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/vma_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/xxhash_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/yoga_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/zstd_license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/python.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engineTester/MainGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/RawModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/RawModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/TexturedModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/TexturedModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/WindowManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/vertexShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textures/ModelTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textures/ModelTexture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textures/Texture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolbox/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolbox/Maths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/MainGameLoop.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +15,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Q6G3G30JZtuaFeUvjHbzYWKf8v" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -269,7 +80,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
