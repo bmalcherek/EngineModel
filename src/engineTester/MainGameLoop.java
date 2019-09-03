@@ -1,5 +1,6 @@
 package engineTester;
 
+import entities.Light;
 import models.RawModel;
 import models.TexturedModel;
 
@@ -29,6 +30,8 @@ public class MainGameLoop {
         Renderer renderer = new Renderer(shader);
 
         ModelTexture steel = new ModelTexture(loader.loadTexture("steel"));
+        steel.setShineDamper(10);
+        steel.setReflectivity(1);
 
         RawModel pistonModel = OBJLoader.loadObjModel("piston", loader);
         RawModel camshaftModel = OBJLoader.loadObjModel("camshaft", loader);
@@ -52,13 +55,16 @@ public class MainGameLoop {
         Entity valveEntity = new Entity(valveStaticModel, new Vector3f(-5, 0, -40), 0.5f, 0.5f, 0, 0.1f);
 
         Camera camera = new Camera();
+        Light light = new Light(new Vector3f(0, 0, -20), new Vector3f(1, 1, 1));
 
         while (!Display.isCloseRequested()) {
         	crankshaftEntity.increaseRotation(0.3f, 0, 0);
+        	camshaftEntity.increaseRotation(0.5f, 0, 0);
             camera.move();
             renderer.prepare();
             shader.start();
             shader.loadViewMatrix(camera);
+            shader.loadLight(light);
             renderer.render(pistonEntity, shader);
             renderer.render(camshaftEntity, shader);
             renderer.render(crankshaftEntity, shader);
