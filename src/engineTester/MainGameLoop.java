@@ -1,9 +1,11 @@
 package engineTester;
 
+import entities.FocusPoint;
 import entities.Light;
 import models.RawModel;
 import models.TexturedModel;
 
+import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 
@@ -20,9 +22,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainGameLoop {
+public class MainGameLoop{
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  throws LWJGLException, IOException  {
 
         DisplayManager.createDisplay();
         Loader loader = new Loader();
@@ -39,6 +41,7 @@ public class MainGameLoop {
         RawModel pistonHeadModel = OBJLoader.loadObjModel("pistonHead", loader);
         RawModel pistonRodModel = OBJLoader.loadObjModel("pistonRod", loader);
         RawModel valveModel = OBJLoader.loadObjModel("valve", loader);
+        RawModel ballModel = OBJLoader.loadObjModel("ball", loader);
 
         TexturedModel pistonStaticModel = new TexturedModel(pistonModel, steel);
         TexturedModel camshaftStaticModel = new TexturedModel(camshaftModel, steel);
@@ -46,6 +49,7 @@ public class MainGameLoop {
         TexturedModel pistonHeadStaticModel = new TexturedModel(pistonHeadModel, steel);
         TexturedModel pistonRodStaticModel = new TexturedModel(pistonRodModel, steel);
         TexturedModel valveStaticModel = new TexturedModel(valveModel, steel);
+        TexturedModel ballStaticModel = new TexturedModel(ballModel, steel);
 
         Entity pistonEntity = new Entity(pistonStaticModel, new Vector3f(0, 0, -40), 0, 0, 0.5f, 1);
         Entity camshaftEntity = new Entity(camshaftStaticModel, new Vector3f(1, 0, -40), 0, 0.5f, 0, 0.1f);
@@ -54,8 +58,9 @@ public class MainGameLoop {
         Entity pistonRodEntity = new Entity(pistonRodStaticModel, new Vector3f(-5, 10, -40), 0.5f, 0.5f, 0, 0.1f);
         Entity valveEntity = new Entity(valveStaticModel, new Vector3f(-5, 0, -40), 0.5f, 0.5f, 0, 0.1f);
 
-        Camera camera = new Camera();
-        Light light = new Light(new Vector3f(0, 0, -20), new Vector3f(1, 1, 1));
+        FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(0,0,0), 0, 0, 0, 1);
+        Camera camera = new Camera(focusPoint);
+        Light light = new Light(new Vector3f(10, 20, -20), new Vector3f(1, 1, 1));
 
         while (!Display.isCloseRequested()) {
         	crankshaftEntity.increaseRotation(0.3f, 0, 0);
