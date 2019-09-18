@@ -1,7 +1,6 @@
 package engineTester;
 
-import entities.FocusPoint;
-import entities.Light;
+import entities.*;
 import models.RawModel;
 import models.TexturedModel;
 
@@ -12,16 +11,14 @@ import org.lwjgl.util.vector.Vector3f;
 import renderEngine.*;
 import shaders.StaticShader;
 import textures.ModelTexture;
-import entities.Camera;
-import entities.Entity;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainGameLoop{
+public class MainGameLoop {
 
-    public static void main(String[] args)  throws LWJGLException, IOException  {
+    public static void main(String[] args) throws LWJGLException, IOException {
 
         DisplayManager.createDisplay();
         Loader loader = new Loader();
@@ -48,41 +45,51 @@ public class MainGameLoop{
         TexturedModel valveStaticModel = new TexturedModel(valveModel, steel);
         TexturedModel ballStaticModel = new TexturedModel(ballModel, steel);
 
+        Entity crankshaftEntity = new Entity(crankshaftStaticModel, new Vector3f(0, 0, 0), 0, 0, 0, 0.11f);
+
         Entity pistonEntity = new Entity(pistonStaticModel, new Vector3f(0, 0, -40), 0, 0, 0.5f, 1);
         Entity camshaftEntity = new Entity(camshaftStaticModel, new Vector3f(1, 0, -40), 0, 0.5f, 0, 0.1f);
-        Entity crankshaftEntity = new Entity(crankshaftStaticModel, new Vector3f(-5, -10, -40), 0, 0.5f, 0, 0.1f);
         Entity pistonHeadEntity = new Entity(pistonHeadStaticModel, new Vector3f(5, 10, -40), 0, 0.5f, 0, 1f);
         Entity pistonRodEntity = new Entity(pistonRodStaticModel, new Vector3f(-5, 10, -40), 0.5f, 0.5f, 0, 1f);
         Entity valveEntity = new Entity(valveStaticModel, new Vector3f(-5, 0, -40), 0.5f, 0.5f, 0, 0.1f);
 
-        FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(0,0,0), 0, 0, 0, 1);
+        FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(9f, 7, 20), 0, 0, 0, 1);
         Camera camera = new Camera(focusPoint);
-        Light light = new Light(new Vector3f(10, 20, -20), new Vector3f(1, 1, 1));
+        Light light = new Light(new Vector3f(10, 20, 40), new Vector3f(1, 1, 1));
+
+        float SPEED = 5f;
+        float crankshaftRotationSpeed = SPEED * 0.108f;
+
+        float firstPistonX = -0.61f;
+        float pistonInterval = 4.52f;
+        float[] startingHeights = {4.42f, 6.6f, 6.6f, 5.7f, 7.73f, 5.7f};
+        float[] startingRotations = {0f, 10f, -10f, -9f, 0f, 9f};
+        int[] startingCycles = {3, 4, 1, 3, 1, 2};
+
+        List<Piston> pistons = new ArrayList<Piston>();
+        for (int i = 0; i < 6; i++) {
+            Piston piston = new Piston(pistonRodStaticModel, pistonHeadStaticModel, valveStaticModel,
+                    new Vector3f(firstPistonX + i * pistonInterval, startingHeights[i], 0), SPEED, startingRotations[i], startingCycles[i]);
+            pistons.add(piston);
+        }
 
         while (!Display.isCloseRequested()) {
-        	crankshaftEntity.increaseRotation(0.3f, 0, 0);
-        	camshaftEntity.increaseRotation(0.5f, 0, 0);
             camera.move();
-//            renderer.prepare();
-//            shader.start();
-//            shader.loadViewMatrix(camera);
-//            shader.loadLight(light);
+
+            for (Piston piston : pistons) {
+                renderer.processEntity(piston.getRod());
+                renderer.processEntity(piston.getHead());
+                piston.move();
+            }
+            crankshaftEntity.increaseRotation(crankshaftRotationSpeed, 0, 0);
+
             renderer.processEntity(crankshaftEntity);
-//            renderer.render(pistonEntity, shader);
-//            renderer.render(camshaftEntity, shader);
-//            renderer.render(crankshaftEntity, shader);
-//            renderer.render(pistonHeadEntity, shader);
-//            renderer.render(pistonRodEntity, shader);
-//            renderer.render(valveEntity, shader);
-//            shader.stop();
             renderer.render(light, camera);
             DisplayManager.updateDisplay();
         }
 
-        shader.cleanUp();
+        renderer.cleanUp();
         loader.cleanUp();
         DisplayManager.closeDisplay();
-
     }
-
 }
