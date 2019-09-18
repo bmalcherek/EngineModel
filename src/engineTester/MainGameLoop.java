@@ -53,7 +53,7 @@ public class MainGameLoop {
         Camera camera = new Camera(focusPoint);
         Light light = new Light(new Vector3f(10, 20, 40), new Vector3f(1, 1, 1));
 
-        float SPEED = 10f;
+        float SPEED = 2f;
         float crankshaftRotationSpeed = SPEED * 0.106f;
         float camshaftRotationSpeed = SPEED * 0.053f;
 
