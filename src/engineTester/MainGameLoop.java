@@ -9,10 +9,7 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 
-import renderEngine.DisplayManager;
-import renderEngine.Loader;
-import renderEngine.OBJLoader;
-import renderEngine.Renderer;
+import renderEngine.*;
 import shaders.StaticShader;
 import textures.ModelTexture;
 import entities.Camera;
@@ -29,7 +26,7 @@ public class MainGameLoop{
         DisplayManager.createDisplay();
         Loader loader = new Loader();
         StaticShader shader = new StaticShader();
-        Renderer renderer = new Renderer(shader);
+        MasterRenderer renderer = new MasterRenderer();
 
         ModelTexture steel = new ModelTexture(loader.loadTexture("steel"));
         steel.setShineDamper(10);
@@ -54,8 +51,8 @@ public class MainGameLoop{
         Entity pistonEntity = new Entity(pistonStaticModel, new Vector3f(0, 0, -40), 0, 0, 0.5f, 1);
         Entity camshaftEntity = new Entity(camshaftStaticModel, new Vector3f(1, 0, -40), 0, 0.5f, 0, 0.1f);
         Entity crankshaftEntity = new Entity(crankshaftStaticModel, new Vector3f(-5, -10, -40), 0, 0.5f, 0, 0.1f);
-        Entity pistonHeadEntity = new Entity(pistonHeadStaticModel, new Vector3f(5, 10, -40), 0, 0.5f, 0, 0.1f);
-        Entity pistonRodEntity = new Entity(pistonRodStaticModel, new Vector3f(-5, 10, -40), 0.5f, 0.5f, 0, 0.1f);
+        Entity pistonHeadEntity = new Entity(pistonHeadStaticModel, new Vector3f(5, 10, -40), 0, 0.5f, 0, 1f);
+        Entity pistonRodEntity = new Entity(pistonRodStaticModel, new Vector3f(-5, 10, -40), 0.5f, 0.5f, 0, 1f);
         Entity valveEntity = new Entity(valveStaticModel, new Vector3f(-5, 0, -40), 0.5f, 0.5f, 0, 0.1f);
 
         FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(0,0,0), 0, 0, 0, 1);
@@ -66,17 +63,19 @@ public class MainGameLoop{
         	crankshaftEntity.increaseRotation(0.3f, 0, 0);
         	camshaftEntity.increaseRotation(0.5f, 0, 0);
             camera.move();
-            renderer.prepare();
-            shader.start();
-            shader.loadViewMatrix(camera);
-            shader.loadLight(light);
-            renderer.render(pistonEntity, shader);
-            renderer.render(camshaftEntity, shader);
-            renderer.render(crankshaftEntity, shader);
-            renderer.render(pistonHeadEntity, shader);
-            renderer.render(pistonRodEntity, shader);
-            renderer.render(valveEntity, shader);
-            shader.stop();
+//            renderer.prepare();
+//            shader.start();
+//            shader.loadViewMatrix(camera);
+//            shader.loadLight(light);
+            renderer.processEntity(crankshaftEntity);
+//            renderer.render(pistonEntity, shader);
+//            renderer.render(camshaftEntity, shader);
+//            renderer.render(crankshaftEntity, shader);
+//            renderer.render(pistonHeadEntity, shader);
+//            renderer.render(pistonRodEntity, shader);
+//            renderer.render(valveEntity, shader);
+//            shader.stop();
+            renderer.render(light, camera);
             DisplayManager.updateDisplay();
         }
 
