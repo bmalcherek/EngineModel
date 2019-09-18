@@ -46,25 +46,26 @@ public class MainGameLoop {
         TexturedModel ballStaticModel = new TexturedModel(ballModel, steel);
 
         Entity crankshaftEntity = new Entity(crankshaftStaticModel, new Vector3f(0, 0, 0), 0, 0, 0, 0.11f);
+        Entity valveEntity = new Entity(valveStaticModel, new Vector3f(17.5f, 11, 0.9f), 35f, 0f, 0, 0.03f);
+        Entity valveEntity2 = new Entity(valveStaticModel, new Vector3f(17.5f, 11, -0.9f), -35f, 0f, 0, 0.03f);
 
         Entity pistonEntity = new Entity(pistonStaticModel, new Vector3f(0, 0, -40), 0, 0, 0.5f, 1);
         Entity camshaftEntity = new Entity(camshaftStaticModel, new Vector3f(1, 0, -40), 0, 0.5f, 0, 0.1f);
         Entity pistonHeadEntity = new Entity(pistonHeadStaticModel, new Vector3f(5, 10, -40), 0, 0.5f, 0, 1f);
         Entity pistonRodEntity = new Entity(pistonRodStaticModel, new Vector3f(-5, 10, -40), 0.5f, 0.5f, 0, 1f);
-        Entity valveEntity = new Entity(valveStaticModel, new Vector3f(-5, 0, -40), 0.5f, 0.5f, 0, 0.1f);
 
-        FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(9f, 7, 20), 0, 0, 0, 1);
+        FocusPoint focusPoint = new FocusPoint(ballStaticModel, new Vector3f(-0.5f, 11, 20), 0, 0, 0, 1);
         Camera camera = new Camera(focusPoint);
         Light light = new Light(new Vector3f(10, 20, 40), new Vector3f(1, 1, 1));
 
-        float SPEED = 5f;
+        float SPEED = 4f;
         float crankshaftRotationSpeed = SPEED * 0.108f;
 
         float firstPistonX = -0.61f;
         float pistonInterval = 4.52f;
         float[] startingHeights = {4.42f, 6.6f, 6.6f, 5.7f, 7.73f, 5.7f};
         float[] startingRotations = {0f, 10f, -10f, -9f, 0f, 9f};
-        int[] startingCycles = {3, 4, 1, 3, 1, 2};
+        int[] startingCycles = {1, 4, 1, 3, 1, 2};
 
         List<Piston> pistons = new ArrayList<Piston>();
         for (int i = 0; i < 6; i++) {
@@ -79,10 +80,11 @@ public class MainGameLoop {
             for (Piston piston : pistons) {
                 renderer.processEntity(piston.getRod());
                 renderer.processEntity(piston.getHead());
+                renderer.processEntity(piston.getValveIn());
+                renderer.processEntity(piston.getValveOut());
                 piston.move();
             }
             crankshaftEntity.increaseRotation(crankshaftRotationSpeed, 0, 0);
-
             renderer.processEntity(crankshaftEntity);
             renderer.render(light, camera);
             DisplayManager.updateDisplay();
