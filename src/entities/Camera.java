@@ -24,7 +24,7 @@ public class Camera {
         float horizontalDistance = calculateHorizontalDistance();
         float verticalDistance = calculateVerticalDistance();
         calculateCameraPosition(horizontalDistance, verticalDistance);
-        this.yaw = focusPoint.getRotation();
+//        this.yaw = focusPoint.getRotation();
     }
 
     public Vector3f getPosition() {
@@ -58,8 +58,9 @@ public class Camera {
 
     private void calculateZoom() {
         float zoomLevel = Mouse.getDWheel() * 0.1f;
-        distanceFromFocusPoint -= zoomLevel;
-        if (distanceFromFocusPoint < MIN_DISTANCE) {
+        if (distanceFromFocusPoint - zoomLevel >= MIN_DISTANCE) {
+            distanceFromFocusPoint -= zoomLevel;
+        } else {
             distanceFromFocusPoint = MIN_DISTANCE;
         }
     }
@@ -70,11 +71,20 @@ public class Camera {
         }
         if (Mouse.isButtonDown(0)) {
             float pitchChange = Mouse.getDY() * 0.1f;
-            pitch -= pitchChange;
+            pitch += pitchChange;
             if (pitch > 90) {
                 pitch = 90;
             } else if (pitch < -90) {
                 pitch = -90;
+            }
+        }
+        if (Mouse.isButtonDown(0)) {
+            float yawChange = Mouse.getDX() * 0.1f;
+            yaw -= yawChange;
+            if (yaw > 90) {
+                yaw = 90;
+            } else if (yaw < -90) {
+                yaw = -90;
             }
         }
     }
