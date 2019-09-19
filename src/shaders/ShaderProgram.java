@@ -13,13 +13,13 @@ import org.lwjgl.util.vector.Vector3f;
 
 public abstract class ShaderProgram {
 	
-	private int programID;
-	private int vertexShaderID;
-	private int fragmentShaderID;
+	private final int programID;
+	private final int vertexShaderID;
+	private final int fragmentShaderID;
 	
-	private static FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
+	private static final FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
 	
-	public ShaderProgram(String vertexFile,String fragmentFile){
+	ShaderProgram(String vertexFile, String fragmentFile){
 		vertexShaderID = loadShader(vertexFile,GL20.GL_VERTEX_SHADER);
 		fragmentShaderID = loadShader(fragmentFile,GL20.GL_FRAGMENT_SHADER);
 		programID = GL20.glCreateProgram();
@@ -33,7 +33,7 @@ public abstract class ShaderProgram {
 	
 	protected abstract void getAllUniformLocations();
 	
-	protected int getUniformLocation(String uniformName){
+	int getUniformLocation(String uniformName){
 		return GL20.glGetUniformLocation(programID,uniformName);
 	}
 	
@@ -56,27 +56,19 @@ public abstract class ShaderProgram {
 	
 	protected abstract void bindAttributes();
 	
-	protected void bindAttribute(int attribute, String variableName){
+	void bindAttribute(int attribute, String variableName){
 		GL20.glBindAttribLocation(programID, attribute, variableName);
 	}
 	
-	protected void loadFloat(int location, float value){
+	void loadFloat(int location, float value){
 		GL20.glUniform1f(location, value);
 	}
 	
-	protected void loadVector(int location, Vector3f vector){
+	void loadVector(int location, Vector3f vector){
 		GL20.glUniform3f(location,vector.x,vector.y,vector.z);
 	}
-	
-	protected void loadBoolean(int location, boolean value){
-		float toLoad = 0;
-		if(value){
-			toLoad = 1;
-		}
-		GL20.glUniform1f(location, toLoad);
-	}
-	
-	protected void loadMatrix(int location, Matrix4f matrix){
+
+	void loadMatrix(int location, Matrix4f matrix){
 		matrix.store(matrixBuffer);
 		matrixBuffer.flip();
 		GL20.glUniformMatrix4(location, false, matrixBuffer);

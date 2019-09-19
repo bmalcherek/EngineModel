@@ -4,30 +4,20 @@ import models.TexturedModel;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Piston {
-    private Entity rod;
-    private Entity head;
-    private Entity valveIn;
-    private Entity valveOut;
+    private final Entity rod;
+    private final Entity head;
+    private final Entity valveIn;
+    private final Entity valveOut;
 
-    private float rodLowestY = 4.42f;
-    private float rodHighestY = 7.74f;
-    private float rodMiddleY = (rodLowestY + rodHighestY) / 2;
-    private float valveOutOpenHeight = 6f;
-    private float valveOutCloseHeight = valveOutOpenHeight + (rodHighestY - valveOutOpenHeight) / 2;
-    private float valveInCloseHeight = 6f;
-    private float valveInGoBackHeight = valveInCloseHeight + (rodHighestY - valveInCloseHeight) / 2;
+    private final float valveSpeed;
 
-    private float valveSpeed;
-
-    private float SPEED;
-    private float rodSpeedY;
-    private float rodRotationX;
+    private final float rodSpeedY;
+    private final float rodRotationX;
 
     private int cycle;
 
     public Piston(TexturedModel texturedRod, TexturedModel texturedHead, TexturedModel texturedValve,
                   Vector3f rodPosition, float speed, float startingRotation, int cycle) {
-        this.SPEED = speed;
         this.rodSpeedY = speed * 0.002f;
         this.rodRotationX = speed * 0.018f;
         this.valveSpeed = speed * 0.0007f;
@@ -40,18 +30,21 @@ public class Piston {
     }
 
     public void move() {
+        float rodHighestY = 7.74f;
+        float rodLowestY = 4.42f;
         if (rod.getPosition().y >= rodHighestY || rod.getPosition().y <= rodLowestY) {
             cycle = cycle % 4 + 1;
         }
         rod.increasePosition(0, (cycle % 2 == 0 ? 1 : -1) * rodSpeedY, 0);
         head.increasePosition(0, (cycle % 2 == 0 ? 1 : -1) * rodSpeedY, 0);
 
-        boolean goingUp = cycle % 2 == 0;
-
+        float rodMiddleY = (rodLowestY + rodHighestY) / 2;
         rod.increaseRotation((rod.getPosition().y <= rodMiddleY ? 1 : -1) * rodRotationX, 0, 0);
 
         if (cycle == 2) {
+            float valveOutOpenHeight = 6f;
             if (rod.getPosition().y >= valveOutOpenHeight) {
+                float valveOutCloseHeight = valveOutOpenHeight + (rodHighestY - valveOutOpenHeight) / 2;
                 if (rod.getPosition().y <= valveOutCloseHeight) {
                     valveOut.increasePosition(0, -valveSpeed, valveSpeed);
                 } else {
@@ -61,7 +54,9 @@ public class Piston {
         }
 
         if (cycle == 3) {
+            float valveInCloseHeight = 6f;
             if (rod.getPosition().y >= valveInCloseHeight) {
+                float valveInGoBackHeight = valveInCloseHeight + (rodHighestY - valveInCloseHeight) / 2;
                 if (rod.getPosition().y >= valveInGoBackHeight) {
                     valveIn.increasePosition(0, -valveSpeed, -valveSpeed);
                 } else {
@@ -87,7 +82,4 @@ public class Piston {
         return valveOut;
     }
 
-    public int getCycle() {
-        return cycle;
-    }
 }

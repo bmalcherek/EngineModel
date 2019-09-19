@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Matrix4f;
 import shaders.StaticShader;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,12 +19,12 @@ public class MasterRenderer {
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000;
     private Matrix4f projectionMatrix;
-    private StaticShader shader;
-    private EntityRenderer entityRenderer;
+    private final StaticShader shader;
+    private final EntityRenderer entityRenderer;
 
-    private Map<TexturedModel, List<Entity>> entities = new HashMap<>();
+    private final Map<TexturedModel, List<Entity>> entities = new HashMap<>();
 
-    public MasterRenderer() throws IOException {
+    public MasterRenderer() {
         GL11.glEnable(GL11.GL_CULL_FACE);
         GL11.glCullFace(GL11.GL_BACK);
         createProjectionMatrix();
@@ -61,7 +60,7 @@ public class MasterRenderer {
         shader.cleanUp();
     }
 
-    public void prepare() {
+    private void prepare() {
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         GL11.glClearColor(0, 0, 0, 1);

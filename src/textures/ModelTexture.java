@@ -2,7 +2,7 @@ package textures;
 
 public class ModelTexture {
 	
-	private int textureID;
+	private final int textureID;
 
 	private float shineDamper = 1;
 	private float reflectivity = 0;

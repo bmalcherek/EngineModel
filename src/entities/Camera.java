@@ -7,13 +7,11 @@ import org.lwjgl.util.vector.Vector3f;
 public class Camera {
     private static final float MIN_DISTANCE = 2;
     private static final float INIT_PITCH = 20;
-    private Vector3f position = new Vector3f(0,0,0);
-    private FocusPoint focusPoint;
+    private final Vector3f position = new Vector3f(0,0,0);
+    private final FocusPoint focusPoint;
     private float pitch = INIT_PITCH;
     private float yaw = 0;
-    private float roll;
     private float distanceFromFocusPoint = 0;
-    private float angleAroundFocusPoint = 0;
 
     public Camera(FocusPoint focusPoint) {
         this.focusPoint = focusPoint;
@@ -41,12 +39,8 @@ public class Camera {
         return yaw;
     }
 
-    public float getRoll() {
-        return roll;
-    }
-
     private void calculateCameraPosition(float horizontalDistance, float verticalDistance) {
-        float theta = focusPoint.getRotation() + angleAroundFocusPoint;
+        float theta = focusPoint.getRotation();
         float offsetX = (float) (horizontalDistance * Math.sin(Math.toRadians(theta)));
         float offsetZ = (float) (horizontalDistance * Math.cos(Math.toRadians(theta)));
         position.x = focusPoint.getPosition().x - offsetX;

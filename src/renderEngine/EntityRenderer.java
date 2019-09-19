@@ -9,12 +9,11 @@ import shaders.StaticShader;
 import textures.ModelTexture;
 import toolbox.Maths;
 
-import javax.xml.soap.Text;
 import java.util.List;
 import java.util.Map;
 
-public class EntityRenderer {
-    private StaticShader shader;
+class EntityRenderer {
+    private final StaticShader shader;
 
     public EntityRenderer(StaticShader shader, Matrix4f projectionMatrix) {
         this.shader = shader;
@@ -35,7 +34,7 @@ public class EntityRenderer {
         }
     }
 
-    public void prepareTexturedModel(TexturedModel model) {
+    private void prepareTexturedModel(TexturedModel model) {
         RawModel rawModel = model.getRawModel();
         GL30.glBindVertexArray(rawModel.getVaoID());
         GL20.glEnableVertexAttribArray(0);

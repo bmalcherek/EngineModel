@@ -4,8 +4,8 @@ import textures.ModelTexture;
 
 public class TexturedModel {
 	
-	private RawModel rawModel;
-	private ModelTexture texture;
+	private final RawModel rawModel;
+	private final ModelTexture texture;
 	
 	public TexturedModel(RawModel model, ModelTexture texture){
 		this.rawModel = model;

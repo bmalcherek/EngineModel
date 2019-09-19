@@ -9,14 +9,13 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 
 import renderEngine.*;
-import shaders.StaticShader;
 import textures.ModelTexture;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainGameLoop {
+class MainGameLoop {
 
     public static void main(String[] args) throws LWJGLException, IOException {
 
@@ -63,7 +62,7 @@ public class MainGameLoop {
         float[] startingRotations = {0f, 10f, -10f, -9f, 0f, 9f};
         int[] startingCycles = {1, 4, 3, 1, 3, 4};
 
-        List<Piston> pistons = new ArrayList<Piston>();
+        List<Piston> pistons = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             Piston piston = new Piston(pistonRodStaticModel, pistonHeadStaticModel, valveStaticModel,
                     new Vector3f(firstPistonX + i * pistonInterval, startingHeights[i], 0), SPEED, startingRotations[i], startingCycles[i]);
