@@ -81,11 +81,6 @@ public class Camera {
         if (Mouse.isButtonDown(0)) {
             float yawChange = Mouse.getDX() * 0.1f;
             yaw -= yawChange;
-            if (yaw > 90) {
-                yaw = 90;
-            } else if (yaw < -90) {
-                yaw = -90;
-            }
         }
     }
 }
